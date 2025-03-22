@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "resume-c6099": {
+      "hosting": {
+        "resume": [
+          "shubhamagrawal"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "resume-c6099"
+  }
+}

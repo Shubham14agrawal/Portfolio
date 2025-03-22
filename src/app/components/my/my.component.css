@@ -1,0 +1,49 @@
+.x {
+  padding-top: 5%;
+  position: relative;
+  margin-left: 58%;
+  margin-top: -8%;
+}
+
+.x .container {
+  height: 400px;
+  width: 400px;
+  perspective: 1200px; /* Maintain clear visibility */
+}
+
+.x .cube {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite;
+}
+
+.x .wall {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.95;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backface-visibility: visible; /* Ensures back is visible */
+}
+
+/* Positioning all 6 faces correctly */
+.x .front  { background-image: url('../../../assets/1.png'); transform: rotateY(0deg) translateZ(200px); }
+.x .back   { background-image: url('../../../assets/2.jpeg'); transform: rotateY(180deg) translateZ(200px); }
+.x .top    { background-image: url('../../../assets/3.jpg'); transform: rotateX(90deg) translateZ(200px); }
+.x .bottom { background-image: url('../../../assets/4.png'); transform: rotateX(-90deg) translateZ(200px); }
+.x .left   { background-image: url('../../../assets/5.png'); transform: rotateY(-90deg) translateZ(200px); }
+.x .right  { background-image: url('../../../assets/6.png'); transform: rotateY(90deg) translateZ(200px); }
+
+/* Smooth rotation across all axes */
+@keyframes rotate {
+  0%   { transform: rotate3d(1, 1, 0, 0deg); }
+  25%  { transform: rotate3d(1, 1, 0, 90deg); }
+  50%  { transform: rotate3d(1, 1, 0, 180deg); }
+  75%  { transform: rotate3d(1, 1, 0, 270deg); }
+  100% { transform: rotate3d(1, 1, 0, 360deg); }
+}
